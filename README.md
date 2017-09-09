@@ -99,7 +99,7 @@ Since OpenShift V3 does not provide a git repository out of the box, you can con
 8. Leave the defaults for the remaining fields - That's it!
 9. After you save your webhook, if you refresh your settings page you can see the status of the ping that Github sent to OpenShift to verify it can reach the server.  
 
-### Enabling the Database example
+### Enabling the Database example ###
 In order to access the example CakePHP home page, which contains application stats including database connectivity, you have to go into the app/View/Layouts/ directory, remove the default.ctp and after that rename default.ctp.default into default.ctp`.
 
 It will also be necessary to update your application to talk to your database back-end. The app/Config/database.php file used by CakePHP was set up in such a way that it will accept environment variables for your connection information that you pass to it. Once an administrator has created a MySQL database service for you to connect with you can add the following environment variables to your deploymentConfig to ensure all your cakephp-example pods have access to these environment variables. Note: the cakephp-mysql.json template creates the DB service and environment variables for you.
